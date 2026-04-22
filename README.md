@@ -1,17 +1,37 @@
-# flutter_lab3_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#  Лабораторная работа №3. Flutter: структура UI и компонентный подход
+## Щербаков Данил ИСП-232
+## Что изучено в ходе работы
+- Построение UI через дерево виджетов в Flutter
+- Создание собственных виджетов-классов (StatelessWidget и StatefulWidget)
+- Разбиение кода на отдельные файлы и организация импортов
+- Передача данных в виджеты через параметры конструктора
+- Работа с assets (изображениями) и подключение их в `pubspec.yaml`
+## Ответы на вопросы
+1. 
+Вынос виджетов в отдельные файлы даёт несколько преимуществ:
+- Улучшение читаемости кода
+- Упрощение поддержки
+- Совместная работа
+Если держать всё в main.dart:
+- Файл быстро разрастается до тысяч строк
+- Сложно ориентироваться в коде
+- Высокий риск конфликтов при работе в команде
+- Невозможно переиспользовать виджеты в других проектах без копирования
+2. 
+BuildContext — это объект, который содержит информацию о положении виджета в дереве виджетов. 
+Метод build() принимает BuildContext потому что:
+- Flutter передаёт контекст автоматически при каждой перерисовке
+- Виджету нужно знать своё место в дереве, чтобы правильно отображаться
+- Через контекст виджет может получать данные от родителей 
+3. 
+Характеристика StatelessWidget StatefulWidget
+Состояние Не имеет изменяемого состояния Имеет состояние, хранящееся в объекте State
+Перерисовка Только при пересоздании По вызову setState()
+Изменение UI Невозможно после создания Можно динамически
+Структура Один класс Два класса (Widget + State)
+Производительность Легче, может быть const Тяжелее из-за отслеживания состояния
+4. 
+- Производительность
+- Качество случайности
+- Принцип единственной ответственности
+- Экономия памяти
