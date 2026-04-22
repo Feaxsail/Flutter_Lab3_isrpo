@@ -16,7 +16,7 @@ class GradientContainer extends StatelessWidget {
   final Color color3;
 
   void rollDice() {
-    
+    // Пока пусто
   }
 
   @override
@@ -37,8 +37,13 @@ class GradientContainer extends StatelessWidget {
               'assets/images/dice-1.png',
               width: 200,
             ),
+            const SizedBox(height: 20),
             TextButton(
               onPressed: rollDice,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                textStyle: TextStyle(fontSize: 28),
+              ),
               child: const Text('Roll Dice'),
             ),
           ],
